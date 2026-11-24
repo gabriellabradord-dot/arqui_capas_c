@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="CDatos/CDatos.csproj" />
+  <Project Path="CEntidades/CEntidades.csproj" />
+  <Project Path="CPresentacion/CPresentacion.csproj" />
+  <Project Path="CReglas/CReglas.csproj" />
+</Solution>

@@ -1,0 +1,90 @@
+html {
+  font-size: 15px;
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+  background-color: #f4f7fb;
+  color: #243447;
+}
+
+.app-navbar {
+  background: linear-gradient(90deg, #0b4f6c 0%, #01baef 100%);
+}
+
+.app-navbar .nav-link {
+  color: rgba(255, 255, 255, 0.88) !important;
+}
+
+.app-navbar .nav-link:hover {
+  color: #ffffff !important;
+}
+
+.page-title {
+  font-weight: 700;
+  color: #0b4f6c;
+}
+
+.card-stat {
+  border: 0;
+  border-radius: 14px;
+  color: #ffffff;
+  box-shadow: 0 8px 20px rgba(11, 79, 108, 0.15);
+}
+
+.card-stat .display-6 {
+  font-weight: 700;
+}
+
+.bg-citas { background: linear-gradient(135deg, #0b4f6c, #118ab2); }
+.bg-pacientes { background: linear-gradient(135deg, #1b7f5a, #2ec4b6); }
+.bg-medicos { background: linear-gradient(135deg, #7f4f24, #e09f3e); }
+
+.table-card {
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(36, 52, 71, 0.08);
+  padding: 1.25rem;
+}
+
+.table thead th {
+  background-color: #e8f1f7;
+  color: #0b4f6c;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.badge-activa {
+  background-color: #d8f3dc;
+  color: #1b4332;
+}
+
+.badge-anulada {
+  background-color: #ffe5e5;
+  color: #9b2226;
+}
+
+.btn-primary {
+  background-color: #0b4f6c;
+  border-color: #0b4f6c;
+}
+
+.btn-primary:hover {
+  background-color: #083d54;
+  border-color: #083d54;
+}
+
+.form-card {
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(36, 52, 71, 0.08);
+  padding: 1.5rem;
+  max-width: 880px;
+}
+
+.footer {
+  background-color: #ffffff;
+}

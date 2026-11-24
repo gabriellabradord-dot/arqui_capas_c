@@ -1,0 +1,17 @@
+/home/gabriel/Proyectos/arquitectura_capas/CReglas/bin/Debug/net10.0/CReglas.deps.json
+/home/gabriel/Proyectos/arquitectura_capas/CReglas/bin/Debug/net10.0/CReglas.dll
+/home/gabriel/Proyectos/arquitectura_capas/CReglas/bin/Debug/net10.0/CReglas.pdb
+/home/gabriel/Proyectos/arquitectura_capas/CReglas/bin/Debug/net10.0/CDatos.dll
+/home/gabriel/Proyectos/arquitectura_capas/CReglas/bin/Debug/net10.0/CEntidades.dll
+/home/gabriel/Proyectos/arquitectura_capas/CReglas/bin/Debug/net10.0/CDatos.pdb
+/home/gabriel/Proyectos/arquitectura_capas/CReglas/bin/Debug/net10.0/CEntidades.pdb
+/home/gabriel/Proyectos/arquitectura_capas/CReglas/obj/Debug/net10.0/CReglas.csproj.AssemblyReference.cache
+/home/gabriel/Proyectos/arquitectura_capas/CReglas/obj/Debug/net10.0/CReglas.GeneratedMSBuildEditorConfig.editorconfig
+/home/gabriel/Proyectos/arquitectura_capas/CReglas/obj/Debug/net10.0/CReglas.AssemblyInfoInputs.cache
+/home/gabriel/Proyectos/arquitectura_capas/CReglas/obj/Debug/net10.0/CReglas.AssemblyInfo.cs
+/home/gabriel/Proyectos/arquitectura_capas/CReglas/obj/Debug/net10.0/CReglas.csproj.CoreCompileInputs.cache
+/home/gabriel/Proyectos/arquitectura_capas/CReglas/obj/Debug/net10.0/CReglas.csproj.Up2Date
+/home/gabriel/Proyectos/arquitectura_capas/CReglas/obj/Debug/net10.0/CReglas.dll
+/home/gabriel/Proyectos/arquitectura_capas/CReglas/obj/Debug/net10.0/refint/CReglas.dll
+/home/gabriel/Proyectos/arquitectura_capas/CReglas/obj/Debug/net10.0/CReglas.pdb
+/home/gabriel/Proyectos/arquitectura_capas/CReglas/obj/Debug/net10.0/ref/CReglas.dll

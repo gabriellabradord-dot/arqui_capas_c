@@ -1,0 +1,70 @@
+﻿@page "{codigo}"
+@model CPresentacion.Pages.Citas.EditModel
+@{
+    ViewData["Title"] = "Editar cita";
+}
+
+<h1 class="page-title mb-3">Editar cita @Model.Cita.Cod_cita</h1>
+
+@if (!string.IsNullOrEmpty(Model.Error))
+{
+    <div class="alert alert-danger">@Model.Error</div>
+}
+
+<div class="form-card">
+    <form method="post">
+        <input type="hidden" asp-for="Cita.Cod_cita" />
+
+        <div class="row g-3">
+            <div class="col-md-4">
+                <label class="form-label">Código de cita</label>
+                <input class="form-control" value="@Model.Cita.Cod_cita" readonly />
+            </div>
+            <div class="col-md-4">
+                <label asp-for="Cita.Fecha" class="form-label">Fecha</label>
+                <input asp-for="Cita.Fecha" type="date" class="form-control" />
+            </div>
+            <div class="col-md-4">
+                <label asp-for="Cita.Hora" class="form-label">Hora</label>
+                <input asp-for="Cita.Hora" type="time" class="form-control" step="60" />
+            </div>
+
+            <div class="col-md-6">
+                <label asp-for="Cita.Id_paciente" class="form-label">Paciente</label>
+                <select asp-for="Cita.Id_paciente" asp-items="Model.Pacientes" class="form-select">
+                    <option value="">-- Seleccione un paciente --</option>
+                </select>
+            </div>
+            <div class="col-md-6">
+                <label asp-for="Cita.Id_medico" class="form-label">Médico</label>
+                <select asp-for="Cita.Id_medico" asp-items="Model.Medicos" class="form-select">
+                    <option value="">-- Seleccione un médico --</option>
+                </select>
+            </div>
+
+            <div class="col-md-6">
+                <label asp-for="Cita.Valor" class="form-label">Valor</label>
+                <input asp-for="Cita.Valor" type="number" min="0" class="form-control" />
+            </div>
+            <div class="col-md-6">
+                <label asp-for="Cita.Nom_acompanante" class="form-label">Nombre del acompañante</label>
+                <input asp-for="Cita.Nom_acompanante" class="form-control" maxlength="50" />
+            </div>
+
+            <div class="col-12">
+                <label asp-for="Cita.Diagnostico" class="form-label">Diagnóstico</label>
+                <textarea asp-for="Cita.Diagnostico" class="form-control" rows="3"></textarea>
+            </div>
+
+            <div class="col-12 form-check ms-2">
+                <input asp-for="Cita.Activo" class="form-check-input" />
+                <label asp-for="Cita.Activo" class="form-check-label">Cita activa</label>
+            </div>
+        </div>
+
+        <div class="mt-4">
+            <button type="submit" class="btn btn-primary">Guardar cambios</button>
+            <a class="btn btn-outline-secondary" asp-page="./Index">Cancelar</a>
+        </div>
+    </form>
+</div>

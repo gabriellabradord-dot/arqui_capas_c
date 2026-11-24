@@ -1,0 +1,99 @@
+﻿@page
+@model CPresentacion.Pages.Citas.IndexModel
+@{
+    ViewData["Title"] = "Citas";
+}
+
+<div class="d-flex flex-wrap justify-content-between align-items-center mb-4">
+    <div>
+        <h1 class="page-title mb-1">Gestión de citas</h1>
+        <p class="text-muted mb-0">Registre, consulte, edite y anule las citas del hospital.</p>
+    </div>
+    <a class="btn btn-primary" asp-page="./Create">+ Nueva cita</a>
+</div>
+
+@if (TempData["Mensaje"] is string mensaje)
+{
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        @mensaje
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Cerrar"></button>
+    </div>
+}
+@if (TempData["Error"] is string error)
+{
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        @error
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Cerrar"></button>
+    </div>
+}
+
+<div class="table-card">
+    <form method="get" class="row g-2 mb-3">
+        <div class="col-sm-6 col-md-4">
+            <input class="form-control" name="buscar" value="@Model.Buscar"
+                   placeholder="Buscar por código, paciente o médico" />
+        </div>
+        <div class="col-auto">
+            <button class="btn btn-outline-primary" type="submit">Buscar</button>
+            <a class="btn btn-outline-secondary" asp-page="./Index">Limpiar</a>
+        </div>
+    </form>
+
+    @if (Model.Citas.Count == 0)
+    {
+        <p class="text-muted mb-0">No se encontraron citas.</p>
+    }
+    else
+    {
+        <div class="table-responsive">
+            <table class="table table-hover align-middle mb-0">
+                <thead>
+                    <tr>
+                        <th>Código</th>
+                        <th>Fecha</th>
+                        <th>Hora</th>
+                        <th>Paciente</th>
+                        <th>Médico</th>
+                        <th class="text-end">Valor</th>
+                        <th>Estado</th>
+                        <th class="text-end">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var cita in Model.Citas)
+                    {
+                        <tr>
+                            <td class="fw-semibold">@cita.Cod_cita</td>
+                            <td>@cita.Fecha.ToString("dd/MM/yyyy")</td>
+                            <td>@cita.Hora.ToString(@"hh\:mm")</td>
+                            <td>@cita.Nom_paciente</td>
+                            <td>@cita.Nom_medico</td>
+                            <td class="text-end">@cita.Valor.ToString("C0", new System.Globalization.CultureInfo("es-CO"))</td>
+                            <td>
+                                @if (cita.Activo)
+                                {
+                                    <span class="badge badge-activa">Activa</span>
+                                }
+                                else
+                                {
+                                    <span class="badge badge-anulada">Anulada</span>
+                                }
+                            </td>
+                            <td class="text-end">
+                                <a class="btn btn-sm btn-outline-primary" asp-page="./Edit" asp-route-codigo="@cita.Cod_cita">Editar</a>
+                                @if (cita.Activo)
+                                {
+                                    <form method="post" asp-page-handler="Anular" class="d-inline"
+                                          onsubmit="return confirm('¿Seguro que desea anular la cita @cita.Cod_cita?');">
+                                        <input type="hidden" name="codigo" value="@cita.Cod_cita" />
+                                        <button type="submit" class="btn btn-sm btn-outline-danger">Anular</button>
+                                    </form>
+                                }
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+</div>

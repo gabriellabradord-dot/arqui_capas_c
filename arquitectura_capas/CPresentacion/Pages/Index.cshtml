@@ -1,0 +1,86 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Inicio";
+}
+
+<div class="d-flex flex-wrap justify-content-between align-items-center mb-4">
+    <div>
+        <h1 class="page-title mb-1">Panel del hospital</h1>
+        <p class="text-muted mb-0">Sistema de citas construido con arquitectura por capas.</p>
+    </div>
+    <a class="btn btn-primary" asp-page="/Citas/Create">+ Nueva cita</a>
+</div>
+
+@if (!string.IsNullOrEmpty(Model.Error))
+{
+    <div class="alert alert-danger">@Model.Error</div>
+}
+
+<div class="row g-3 mb-4">
+    <div class="col-md-4">
+        <div class="card card-stat bg-citas h-100">
+            <div class="card-body">
+                <div class="text-uppercase small opacity-75">Citas activas</div>
+                <div class="display-6">@Model.CitasActivas</div>
+                <a class="text-white small" asp-page="/Citas/Index">Ver todas las citas →</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card card-stat bg-pacientes h-100">
+            <div class="card-body">
+                <div class="text-uppercase small opacity-75">Pacientes activos</div>
+                <div class="display-6">@Model.PacientesActivos</div>
+                <a class="text-white small" asp-page="/Pacientes/Index">Ver pacientes →</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card card-stat bg-medicos h-100">
+            <div class="card-body">
+                <div class="text-uppercase small opacity-75">Médicos activos</div>
+                <div class="display-6">@Model.MedicosActivos</div>
+                <a class="text-white small" asp-page="/Medicos/Index">Ver médicos →</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="table-card">
+    <h2 class="h5 page-title mb-3">Próximas citas</h2>
+    @if (Model.ProximasCitas.Count == 0)
+    {
+        <p class="text-muted mb-0">No hay citas próximas registradas.</p>
+    }
+    else
+    {
+        <div class="table-responsive">
+            <table class="table table-hover align-middle mb-0">
+                <thead>
+                    <tr>
+                        <th>Código</th>
+                        <th>Fecha</th>
+                        <th>Hora</th>
+                        <th>Paciente</th>
+                        <th>Médico</th>
+                        <th class="text-end">Valor</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var cita in Model.ProximasCitas)
+                    {
+                        <tr>
+                            <td class="fw-semibold">@cita.Cod_cita</td>
+                            <td>@cita.Fecha.ToString("dd/MM/yyyy")</td>
+                            <td>@cita.Hora.ToString(@"hh\:mm")</td>
+                            <td>@cita.Nom_paciente</td>
+                            <td>@cita.Nom_medico</td>
+                            <td class="text-end">@cita.Valor.ToString("C0", new System.Globalization.CultureInfo("es-CO"))</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+</div>

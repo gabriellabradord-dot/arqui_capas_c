@@ -1,0 +1,60 @@
+﻿@page
+@model CPresentacion.Pages.Medicos.CreateModel
+@{
+    ViewData["Title"] = "Nuevo médico";
+}
+
+<h1 class="page-title mb-3">Nuevo médico</h1>
+
+@if (!string.IsNullOrEmpty(Model.Error))
+{
+    <div class="alert alert-danger">@Model.Error</div>
+}
+
+<div class="form-card">
+    <form method="post">
+        <div class="row g-3">
+            <div class="col-md-4">
+                <label asp-for="Medico.Id_medico" class="form-label">Documento</label>
+                <input asp-for="Medico.Id_medico" class="form-control" maxlength="10" />
+            </div>
+            <div class="col-md-4">
+                <label asp-for="Medico.Tip_doc" class="form-label">Tipo de documento</label>
+                <select asp-for="Medico.Tip_doc" class="form-select">
+                    <option value="CC">Cédula de ciudadanía</option>
+                    <option value="CE">Cédula de extranjería</option>
+                    <option value="PA">Pasaporte</option>
+                </select>
+            </div>
+            <div class="col-md-4">
+                <label asp-for="Medico.Nom_medico" class="form-label">Nombre completo</label>
+                <input asp-for="Medico.Nom_medico" class="form-control" maxlength="50" />
+            </div>
+            <div class="col-md-6">
+                <label asp-for="Medico.Especialidad" class="form-label">Especialidad</label>
+                <input asp-for="Medico.Especialidad" class="form-control" maxlength="50" />
+            </div>
+            <div class="col-md-6">
+                <label asp-for="Medico.Dir_medico" class="form-label">Dirección</label>
+                <input asp-for="Medico.Dir_medico" class="form-control" maxlength="50" />
+            </div>
+            <div class="col-md-3">
+                <label asp-for="Medico.Tel_medico" class="form-label">Teléfono</label>
+                <input asp-for="Medico.Tel_medico" class="form-control" maxlength="10" />
+            </div>
+            <div class="col-md-3">
+                <label asp-for="Medico.Cel_medico" class="form-label">Celular</label>
+                <input asp-for="Medico.Cel_medico" class="form-control" maxlength="10" />
+            </div>
+            <div class="col-12 form-check ms-2">
+                <input asp-for="Medico.Activo" class="form-check-input" />
+                <label asp-for="Medico.Activo" class="form-check-label">Médico activo</label>
+            </div>
+        </div>
+
+        <div class="mt-4">
+            <button type="submit" class="btn btn-primary">Guardar médico</button>
+            <a class="btn btn-outline-secondary" asp-page="./Index">Cancelar</a>
+        </div>
+    </form>
+</div>

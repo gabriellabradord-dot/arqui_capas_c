@@ -1,0 +1,11 @@
+/home/gabriel/Proyectos/arquitectura_capas/CEntidades/bin/Debug/net10.0/CEntidades.deps.json
+/home/gabriel/Proyectos/arquitectura_capas/CEntidades/bin/Debug/net10.0/CEntidades.dll
+/home/gabriel/Proyectos/arquitectura_capas/CEntidades/bin/Debug/net10.0/CEntidades.pdb
+/home/gabriel/Proyectos/arquitectura_capas/CEntidades/obj/Debug/net10.0/CEntidades.GeneratedMSBuildEditorConfig.editorconfig
+/home/gabriel/Proyectos/arquitectura_capas/CEntidades/obj/Debug/net10.0/CEntidades.AssemblyInfoInputs.cache
+/home/gabriel/Proyectos/arquitectura_capas/CEntidades/obj/Debug/net10.0/CEntidades.AssemblyInfo.cs
+/home/gabriel/Proyectos/arquitectura_capas/CEntidades/obj/Debug/net10.0/CEntidades.csproj.CoreCompileInputs.cache
+/home/gabriel/Proyectos/arquitectura_capas/CEntidades/obj/Debug/net10.0/CEntidades.dll
+/home/gabriel/Proyectos/arquitectura_capas/CEntidades/obj/Debug/net10.0/refint/CEntidades.dll
+/home/gabriel/Proyectos/arquitectura_capas/CEntidades/obj/Debug/net10.0/CEntidades.pdb
+/home/gabriel/Proyectos/arquitectura_capas/CEntidades/obj/Debug/net10.0/ref/CEntidades.dll

@@ -1,0 +1,15 @@
+/home/gabriel/Proyectos/arquitectura_capas/CDatos/bin/Debug/net10.0/CDatos.deps.json
+/home/gabriel/Proyectos/arquitectura_capas/CDatos/bin/Debug/net10.0/CDatos.dll
+/home/gabriel/Proyectos/arquitectura_capas/CDatos/bin/Debug/net10.0/CDatos.pdb
+/home/gabriel/Proyectos/arquitectura_capas/CDatos/bin/Debug/net10.0/CEntidades.dll
+/home/gabriel/Proyectos/arquitectura_capas/CDatos/bin/Debug/net10.0/CEntidades.pdb
+/home/gabriel/Proyectos/arquitectura_capas/CDatos/obj/Debug/net10.0/CDatos.csproj.AssemblyReference.cache
+/home/gabriel/Proyectos/arquitectura_capas/CDatos/obj/Debug/net10.0/CDatos.GeneratedMSBuildEditorConfig.editorconfig
+/home/gabriel/Proyectos/arquitectura_capas/CDatos/obj/Debug/net10.0/CDatos.AssemblyInfoInputs.cache
+/home/gabriel/Proyectos/arquitectura_capas/CDatos/obj/Debug/net10.0/CDatos.AssemblyInfo.cs
+/home/gabriel/Proyectos/arquitectura_capas/CDatos/obj/Debug/net10.0/CDatos.csproj.CoreCompileInputs.cache
+/home/gabriel/Proyectos/arquitectura_capas/CDatos/obj/Debug/net10.0/CDatos.csproj.Up2Date
+/home/gabriel/Proyectos/arquitectura_capas/CDatos/obj/Debug/net10.0/CDatos.dll
+/home/gabriel/Proyectos/arquitectura_capas/CDatos/obj/Debug/net10.0/refint/CDatos.dll
+/home/gabriel/Proyectos/arquitectura_capas/CDatos/obj/Debug/net10.0/CDatos.pdb
+/home/gabriel/Proyectos/arquitectura_capas/CDatos/obj/Debug/net10.0/ref/CDatos.dll

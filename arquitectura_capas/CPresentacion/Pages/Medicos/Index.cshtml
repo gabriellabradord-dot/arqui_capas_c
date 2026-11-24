@@ -1,0 +1,95 @@
+﻿@page
+@model CPresentacion.Pages.Medicos.IndexModel
+@{
+    ViewData["Title"] = "Médicos";
+}
+
+<div class="d-flex flex-wrap justify-content-between align-items-center mb-4">
+    <div>
+        <h1 class="page-title mb-1">Médicos</h1>
+        <p class="text-muted mb-0">Administre los médicos del hospital.</p>
+    </div>
+    <a class="btn btn-primary" asp-page="./Create">+ Nuevo médico</a>
+</div>
+
+@if (TempData["Mensaje"] is string mensaje)
+{
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        @mensaje
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Cerrar"></button>
+    </div>
+}
+@if (TempData["Error"] is string error)
+{
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        @error
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Cerrar"></button>
+    </div>
+}
+
+<div class="table-card">
+    <form method="get" class="row g-2 mb-3">
+        <div class="col-sm-6 col-md-4">
+            <input class="form-control" name="buscar" value="@Model.Buscar"
+                   placeholder="Buscar por documento o nombre" />
+        </div>
+        <div class="col-auto">
+            <button class="btn btn-outline-primary" type="submit">Buscar</button>
+            <a class="btn btn-outline-secondary" asp-page="./Index">Limpiar</a>
+        </div>
+    </form>
+
+    @if (Model.Medicos.Count == 0)
+    {
+        <p class="text-muted mb-0">No se encontraron médicos.</p>
+    }
+    else
+    {
+        <div class="table-responsive">
+            <table class="table table-hover align-middle mb-0">
+                <thead>
+                    <tr>
+                        <th>Documento</th>
+                        <th>Nombre</th>
+                        <th>Especialidad</th>
+                        <th>Celular</th>
+                        <th>Estado</th>
+                        <th class="text-end">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var medico in Model.Medicos)
+                    {
+                        <tr>
+                            <td class="fw-semibold">@medico.Id_medico</td>
+                            <td>@medico.Nom_medico</td>
+                            <td>@medico.Especialidad</td>
+                            <td>@medico.Cel_medico</td>
+                            <td>
+                                @if (medico.Activo)
+                                {
+                                    <span class="badge badge-activa">Activo</span>
+                                }
+                                else
+                                {
+                                    <span class="badge badge-anulada">Inactivo</span>
+                                }
+                            </td>
+                            <td class="text-end">
+                                <a class="btn btn-sm btn-outline-primary" asp-page="./Edit" asp-route-id="@medico.Id_medico">Editar</a>
+                                @if (medico.Activo)
+                                {
+                                    <form method="post" asp-page-handler="Anular" class="d-inline"
+                                          onsubmit="return confirm('¿Seguro que desea inactivar el médico @medico.Id_medico?');">
+                                        <input type="hidden" name="id" value="@medico.Id_medico" />
+                                        <button type="submit" class="btn btn-sm btn-outline-danger">Inactivar</button>
+                                    </form>
+                                }
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+</div>

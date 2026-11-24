@@ -1,0 +1,60 @@
+﻿@page "{id}"
+@model CPresentacion.Pages.Pacientes.EditModel
+@{
+    ViewData["Title"] = "Editar paciente";
+}
+
+<h1 class="page-title mb-3">Editar paciente @Model.Paciente.Id_paciente</h1>
+
+@if (!string.IsNullOrEmpty(Model.Error))
+{
+    <div class="alert alert-danger">@Model.Error</div>
+}
+
+<div class="form-card">
+    <form method="post">
+        <input type="hidden" asp-for="Paciente.Id_paciente" />
+
+        <div class="row g-3">
+            <div class="col-md-4">
+                <label class="form-label">Documento</label>
+                <input class="form-control" value="@Model.Paciente.Id_paciente" readonly />
+            </div>
+            <div class="col-md-4">
+                <label asp-for="Paciente.Tip_doc" class="form-label">Tipo de documento</label>
+                <select asp-for="Paciente.Tip_doc" class="form-select">
+                    <option value="CC">Cédula de ciudadanía</option>
+                    <option value="TI">Tarjeta de identidad</option>
+                    <option value="CE">Cédula de extranjería</option>
+                    <option value="PA">Pasaporte</option>
+                    <option value="RC">Registro civil</option>
+                </select>
+            </div>
+            <div class="col-md-4">
+                <label asp-for="Paciente.Nom_paciente" class="form-label">Nombre completo</label>
+                <input asp-for="Paciente.Nom_paciente" class="form-control" maxlength="50" />
+            </div>
+            <div class="col-md-6">
+                <label asp-for="Paciente.Dir_paciente" class="form-label">Dirección</label>
+                <input asp-for="Paciente.Dir_paciente" class="form-control" maxlength="50" />
+            </div>
+            <div class="col-md-3">
+                <label asp-for="Paciente.Tel_paciente" class="form-label">Teléfono</label>
+                <input asp-for="Paciente.Tel_paciente" class="form-control" maxlength="10" />
+            </div>
+            <div class="col-md-3">
+                <label asp-for="Paciente.Cel_paciente" class="form-label">Celular</label>
+                <input asp-for="Paciente.Cel_paciente" class="form-control" maxlength="10" />
+            </div>
+            <div class="col-12 form-check ms-2">
+                <input asp-for="Paciente.Activo" class="form-check-input" />
+                <label asp-for="Paciente.Activo" class="form-check-label">Paciente activo</label>
+            </div>
+        </div>
+
+        <div class="mt-4">
+            <button type="submit" class="btn btn-primary">Guardar cambios</button>
+            <a class="btn btn-outline-secondary" asp-page="./Index">Cancelar</a>
+        </div>
+    </form>
+</div>
